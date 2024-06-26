@@ -1,0 +1,12 @@
+# traefik.toml
+
+[entryPoints]
+  [entryPoints.http]
+    address = ":80"
+
+[api]
+  dashboard = true
+
+[providers.file]
+  filename = "dynamic_conf.toml"
+  watch = true

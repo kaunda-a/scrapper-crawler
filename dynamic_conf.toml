@@ -1,0 +1,12 @@
+# dynamic_conf.toml
+
+[http]
+  [http.routers]
+    [http.routers.my-router]
+      rule = "Host(`your_domain.com`)"
+      service = "my-service"
+
+  [http.services]
+    [http.services.my-service.loadBalancer]
+      [[http.services.my-service.loadBalancer.servers]]
+        url = "http://localhost:8080"
